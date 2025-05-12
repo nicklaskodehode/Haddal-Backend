@@ -8,8 +8,8 @@ export const login = async (req, res, next) => {
         }
         const result = await db.query(
             `
-            declare @ReturnValue int; 
-            declare @Token nvarchar(4000); 
+            declare @ReturnValue int;
+            declare @Token nvarchar(4000);
             declare @flag BIT;
             EXEC @ReturnValue = LoginUser @username = :username, @password = :password, @flag = @flag OUTPUT, @userToken = @Token OUTPUT; 
             Select @ReturnValue as ReturnValue, @Token as UserToken, @flag as roleFlag;
