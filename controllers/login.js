@@ -25,7 +25,7 @@ export const login = async (req, res, next) => {
                 return res.status(400).json({ error: 'Something went wrong'});
             }
             else{
-                return res.status(200).json({token: result[0].UserToken, role: result[0].roleFlag});
+                return res.status(200).json({token: result[0].UserToken, roleFlag: result[0].roleFlag});
             }
     } catch(err){
         return res.status(500).json({ error: "An Error occured: "+ err });
